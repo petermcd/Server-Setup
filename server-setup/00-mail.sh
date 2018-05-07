@@ -31,12 +31,12 @@ domain="${fqdn/$hostWithSeparator/$blank}"
 
 configFile="/etc/postfix/main.cf"
 
-postfixReplace "#myhostname = host.domain.tld" "myhostname = $fqdn" $configFile
-postfixReplace "#mydomain = domain.tld" "mydomain = $domain" $configFile
-postfixReplace "#myorigin = \$myhostname" "myorigin = \$mydomain" $configFile
-postfixReplace "#inet_interfaces = all" "inet_interfaces = all" $configFile
-postfixReplace "mydestination = \$myhostname, localhost.\$mydomain, localhost" "mydestination = \$myhostname, localhost.\$mydomain, localhost, \$mydomain" $configFile
-postfixReplace "#mynetworks = 168.100.189.0\/28, 127.0.0.0\/8" "mynetworks = $ip4\/32, 127.0.0.0\/8" $configFile
-postfixReplace "#home_mailbox = Maildir\/" "home_mailbox = Maildir\/" $configFile
+replaceInFile "#myhostname = host.domain.tld" "myhostname = $fqdn" $configFile
+replaceInFile "#mydomain = domain.tld" "mydomain = $domain" $configFile
+replaceInFile "#myorigin = \$myhostname" "myorigin = \$mydomain" $configFile
+replaceInFile "#inet_interfaces = all" "inet_interfaces = all" $configFile
+replaceInFile "mydestination = \$myhostname, localhost.\$mydomain, localhost" "mydestination = \$myhostname, localhost.\$mydomain, localhost, \$mydomain" $configFile
+replaceInFile "#mynetworks = 168.100.189.0\/28, 127.0.0.0\/8" "mynetworks = $ip4\/32, 127.0.0.0\/8" $configFile
+replaceInFile "#home_mailbox = Maildir\/" "home_mailbox = Maildir\/" $configFile
 
 enableService postfix
