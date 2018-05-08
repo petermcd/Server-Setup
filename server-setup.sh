@@ -6,14 +6,14 @@ yum -y install wget git
 yum install epel* -y
 yum upgrade -y
 
+source ./helpers/functions.sh
+
 #Enable the firewall
 yum install firewalld -y
 enableService firewalld
 firewall-cmd --reload
 
 echo "Server: " hostname -f >> ./emailFile.txt
-
-source ./helpers/functions.sh
 
 fileString=`ls *.sh`
 #echo $fileString
