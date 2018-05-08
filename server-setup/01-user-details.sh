@@ -5,7 +5,7 @@ password=$(generatePassword)
 
 adduser -p $password $username
 
-echo "Username: " $dev >> ./emailFile.txt
+echo "Username: " $username >> ./emailFile.txt
 echo "Password: " $password >> ./emailFile.txt
 
 sshConfigFile="/etc/ssh/sshd_config"
@@ -23,6 +23,6 @@ chmod 700 "/home/$username/.ssh"
 touch "/home/$username/.ssh/authorized_keys"
 chmod 600 "/home/$username/.ssh/authorized_keys"
 
-cat ./ssh/publickey.txt > "/home/$username/.ssh/authorized_keys"
+cat ssh/publickey.txt > "/home/$username/.ssh/authorized_keys"
 
 enableService sshd

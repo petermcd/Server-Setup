@@ -4,7 +4,7 @@ echo "$(tput setaf 1)###########################################################
 echo "$(tput setaf 2)Installing Maria DB$(tput setaf 1)"
 echo "#########################################################################$(tput setaf 7)"
 
-cp ./server-setup/mariadb/MariaDB.repo /etc/yum.repos.d/MariaDB.repo
+cp server-setup/mariadb/MariaDB.repo /etc/yum.repos.d/MariaDB.repo
 yum -y install MariaDB-server MariaDB-client
 
 enableService mariadb
