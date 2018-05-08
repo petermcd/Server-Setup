@@ -10,3 +10,17 @@ yum upgrade -y
 yum install firewalld -y
 enableService firewalld
 firewall-cmd --reload
+
+echo "Server: " hostname -f >> ./emailFile.txt
+
+source ./helpers/functions.sh
+
+fileString=`ls *.sh`
+#echo $fileString
+fileArray=$(echo $fileString | tr " " "\n")
+for file in $fileArray
+do
+    source ./server-setup/$file
+done
+
+#todo email the results from emailFile.txt

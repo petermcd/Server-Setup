@@ -9,5 +9,6 @@ yum install letsencrypt
 mkdir /etc/letsencrypt/cron/
 
 #Copy the cron script
-cp letsencrypt/letsencrypt-ss-renewal-cron.sh /etc/letsencrypt/cron/letsencrypt-ss-renewal.sh
+cp ./server-setup/letsencrypt/letsencrypt-ss-renewal-cron.sh /etc/letsencrypt/cron/letsencrypt-ss-renewal.sh
+chmod 700 /etc/letsencrypt/cron/letsencrypt-ss-renewal.sh
 sed -i '$ a\  0  0  *  *  * root       /etc/letsencrypt/cron/renew.sh' /etc/crontab
