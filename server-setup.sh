@@ -13,7 +13,7 @@ yum install firewalld -y
 enableService firewalld
 firewall-cmd --reload
 
-echo "Server: " hostname -f >> ./emailFile.txt
+echo "Server: " `hostname -f` >> ./emailFile.txt
 
 fileString=`ls server-setup/*.sh`
 #echo $fileString

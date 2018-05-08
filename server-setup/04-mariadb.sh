@@ -7,9 +7,9 @@ echo "#########################################################################$
 cp server-setup/mariadb/MariaDB.repo /etc/yum.repos.d/MariaDB.repo
 yum -y install MariaDB-server MariaDB-client
 
-enableService mariadb
-
 mysql_install_db --user=mysql
+
+enableService mariadb
 
 databasePassword=$(generatePassword)
 mysqladmin -u root password "$databasePassword"
