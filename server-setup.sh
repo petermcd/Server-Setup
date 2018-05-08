@@ -15,12 +15,12 @@ firewall-cmd --reload
 
 echo "Server: " hostname -f >> ./emailFile.txt
 
-fileString=`ls *.sh`
+fileString=`ls server-setup/*.sh`
 #echo $fileString
 fileArray=$(echo $fileString | tr " " "\n")
 for file in $fileArray
 do
-    source ./server-setup/$file
+    source $file
 done
 
 #todo email the results from emailFile.txt
