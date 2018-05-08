@@ -16,3 +16,4 @@ setsebool -P httpd_can_sendmail 1
 #Enable http through the firewall
 firewall-cmd --zone=public --add-service=http --permanent
 firewall-cmd --zone=public --add-service=https --permanent
+firewall-cmd --reload
