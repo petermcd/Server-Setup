@@ -6,6 +6,7 @@ echo "#########################################################################$
 
 yum -y install letsencrypt
 
+mkdir /etc/letsencrypt/
 mkdir /etc/letsencrypt/cron/
 
 #Copy the cron script
