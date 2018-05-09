@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
+echo "$(tput setaf 1)#########################################################################"
+echo "$(tput setaf 2)Setting Up User$(tput setaf 1)"
+echo "#########################################################################$(tput setaf 7)"
+
 username="dev"
 password=$(generatePassword)
 
-adduser -p $password $username
+adduser -p "$password" $username
 
 echo "Username: " $username >> ./emailFile.txt
 echo "Password: " $password >> ./emailFile.txt

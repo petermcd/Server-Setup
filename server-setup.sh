@@ -31,9 +31,8 @@ do
         fi
 done
 echo "Server: " `hostname -f` >> ./emailFile.txt
-echo
-echo "IPv4: " $ip4
-echo "IPv6: " $ip6
+echo "IPv4: " $ip4 >> ./emailFile.txt
+echo "IPv6: " $ip6 >> ./emailFile.txt
 
 fileString=`ls server-setup/*.sh`
 #echo $fileString
