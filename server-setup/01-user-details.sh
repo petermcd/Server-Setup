@@ -23,6 +23,6 @@ chmod 700 "/home/$username/.ssh"
 touch "/home/$username/.ssh/authorized_keys"
 chmod 600 "/home/$username/.ssh/authorized_keys"
 
-cat ssh/publickey.txt > "/home/$username/.ssh/authorized_keys"
+cat server-setup/ssh/publickey.txt > "/home/$username/.ssh/authorized_keys"
 
 enableService sshd

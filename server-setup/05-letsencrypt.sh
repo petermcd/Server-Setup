@@ -4,7 +4,7 @@ echo "$(tput setaf 1)###########################################################
 echo "$(tput setaf 2)Installing Lets Encrypt$(tput setaf 1)"
 echo "#########################################################################$(tput setaf 7)"
 
-yum install letsencrypt
+yum -y install letsencrypt
 
 mkdir /etc/letsencrypt/cron/
 
