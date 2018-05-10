@@ -12,4 +12,4 @@ find . -name "*.sh" -exec chmod +100 {} +
 } > log.txt 2>error.txt
 
 zip server.zip *.txt
-mailx -s "Server Details" -a server.zip email < emailFile.txt
+mailx -s "Server Details" -a server.zip $email < emailFile.txt
