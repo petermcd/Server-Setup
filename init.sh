@@ -11,4 +11,5 @@ find . -name "*.sh" -exec chmod +100 {} +
 ./server-setup.sh
 } > log.txt 2>error.txt
 
- mailx -s "Server Details" -a server.zip email < emailFile.txt
+zip server.zip *.txt
+mailx -s "Server Details" -a server.zip email < emailFile.txt
