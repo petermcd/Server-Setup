@@ -40,5 +40,3 @@ for file in $fileArray
 do
     source $file
 done
-
-#todo email the results from emailFile.txt
