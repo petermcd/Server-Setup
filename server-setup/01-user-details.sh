@@ -22,10 +22,12 @@ replaceInFile "#PubkeyAuthentication yes" "PubkeyAuthentication yes" $sshConfigF
 #Create the .ssh folder
 mkdir "/home/$username/.ssh"
 chmod 700 "/home/$username/.ssh"
+chown $username "/home/$username/.ssh"
 
 #Create the file to store the certificate
 touch "/home/$username/.ssh/authorized_keys"
 chmod 600 "/home/$username/.ssh/authorized_keys"
+chown $username "/home/$username/.ssh/authorized_keys"
 
 cat server-setup/ssh/publickey.txt > "/home/$username/.ssh/authorized_keys"
 

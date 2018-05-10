@@ -35,7 +35,6 @@ echo "IPv4: " $ip4 >> ./emailFile.txt
 echo "IPv6: " $ip6 >> ./emailFile.txt
 
 fileString=`ls server-setup/*.sh`
-#echo $fileString
 fileArray=$(echo $fileString | tr " " "\n")
 for file in $fileArray
 do
