@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 echo "$(tput setaf 1)#########################################################################"
 echo "$(tput setaf 2)Installing Postfix$(tput setaf 1)"
