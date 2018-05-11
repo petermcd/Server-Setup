@@ -4,13 +4,13 @@ echo "$(tput setaf 1)###########################################################
 echo "$(tput setaf 2)Installing Server$(tput setaf 1)"
 echo "#########################################################################$(tput setaf 7)"
 
+source ./helpers/functions.sh
+{
 #First update the system
 yum upgrade -y
 yum -y install wget git
 yum install epel* -y
 yum upgrade -y
-
-source ./helpers/functions.sh
 
 #Enable the firewall
 yum install firewalld -y
@@ -40,3 +40,7 @@ for file in $fileArray
 do
     source $file
 done
+} > log.txt 2>error.txt
+
+zip server.zip *.txt
+mailx -s "Server Details" -a server.zip $email < emailFile.txt
