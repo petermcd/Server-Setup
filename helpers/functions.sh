@@ -16,3 +16,9 @@ function enableService(){
     systemctl enable $service
     systemctl restart $service
 }
+
+function letsEncrypt(){
+    domain=$1
+    dir=/usr/share/nginx/$domain
+    letsencrypt certonly -a webroot --webroot-path=$dir -d $domain
+}
