@@ -12,4 +12,4 @@ find . -name "*.sh" -exec chmod +100 {} +
 ./server-setup.sh
 
 cd /root/
-rm -rf Server-Setup
+#rm -rf *

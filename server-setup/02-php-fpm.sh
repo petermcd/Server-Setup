@@ -12,7 +12,7 @@ yum update -y
 
 #Install PHP-FPM and additional modules
 yum -y --enablerepo=remi,remi-php72 install php-fpm php-common
-yum -y --enablerepo=remi,remi-php72 install php-opcache php-pecl-apcu php-cli php-pdo php-pgsql php-pecl-memcache php-pecl-memcached php-gd php-mbstring php-mcrypt php-xml
+yum -y --enablerepo=remi,remi-php72 install php-opcache php-pecl-apcu php-cli php-pdo php-pdo_mysql php-pecl-memcache php-pecl-memcached php-gd php-mbstring php-mcrypt php-xml
 
 enableService php-fpm
 
