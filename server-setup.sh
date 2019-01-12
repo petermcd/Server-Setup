@@ -8,7 +8,7 @@ source ./helpers/functions.sh
 {
 #First update the system
 yum upgrade -y
-yum -y install wget git
+yum -y install wget
 yum install epel* -y
 yum upgrade -y
 

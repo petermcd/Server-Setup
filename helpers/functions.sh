@@ -22,3 +22,6 @@ function letsEncrypt(){
     dir=/usr/share/nginx/$domain
     letsencrypt certonly -a webroot --webroot-path=$dir -d $domain
 }
+
+function addCronJob(){
+}
