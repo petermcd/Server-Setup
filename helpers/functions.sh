@@ -32,7 +32,7 @@ function addCronJob(){
 	month=$6
 	weekday=$7
 	crontab -l > tempcron
-	echo '$minute  $hour  $day  $month  $weekday $user       $command' >> tempcron
+	echo "$minute  $hour  $day  $month  $weekday $user       $command" >> tempcron
 	crontab tempcron
 	rm -f tempcron
 }
