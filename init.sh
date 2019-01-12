@@ -11,5 +11,9 @@ cd Server-Setup/
 find . -name "*.sh" -exec chmod +100 {} +
 ./server-setup.sh
 
-cd /root/
-#rm -rf *
+cd ~
+
+if [ $email ]
+	then
+		rm -rf *
+fi

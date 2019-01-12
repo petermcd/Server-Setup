@@ -43,4 +43,7 @@ done
 } > log.txt 2>error.txt
 
 zip server.zip *.txt
-mailx -s "Server Details" -a server.zip $email < emailFile.txt
+if [ $email ]
+	then
+		mailx -s "Server Details" -a server.zip $email < emailFile.txt
+fi
