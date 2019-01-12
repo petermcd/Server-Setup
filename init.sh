@@ -1,7 +1,7 @@
 #!/bin/bash
 
 email=""
-EXPORT email
+export email
 
 yum -y install git
 cd /root/
