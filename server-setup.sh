@@ -40,7 +40,7 @@ for file in $fileArray
 do
     source $file
 done
-} > log.txt 2>error.txt
+} 2>error.txt
 
 zip server.zip *.txt
 if [ $email ]
